@@ -1,0 +1,24 @@
+{
+  "name": "quidax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "less-watch-compiler --run-once",
+    "compile:dev": "less-watch-compiler"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Easybuoy/quidax.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Easybuoy/quidax/issues"
+  },
+  "homepage": "https://github.com/Easybuoy/quidax#readme",
+  "dependencies": {
+    "less-watch-compiler": "^1.14.6"
+  }
+}
