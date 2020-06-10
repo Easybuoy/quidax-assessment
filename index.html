@@ -12,14 +12,20 @@
   </head>
   <body>
     <nav>
-      <div class="nav__logo">
-        <a href="/">
-          <img class="img_sm" src="./assets/logo.png" alt="Logo"
-        /></a>
+      <div class="nav__left">
+        <div class="nav__menu" onclick="toggleNav()">
+          <img src="./assets/menu.svg" alt="Menu" />
+        </div>
 
-        <div class="nav__logo__text">
-          <h3>Quidax Book Club</h3>
-          <p>Admin</p>
+        <div class="nav__logo">
+          <a href="/">
+            <img class="img_sm" src="./assets/logo.png" alt="Logo" />
+          </a>
+
+          <div class="nav__logo__text">
+            <h3>Quidax Book Club</h3>
+            <p>Admin</p>
+          </div>
         </div>
       </div>
 
@@ -32,6 +38,10 @@
       </div>
 
       <div class="nav__links">
+        <div class="nav__links__item search-icon">
+          <img src="./assets/search.svg" alt="Search" />
+        </div>
+
         <div class="nav__links__item">
           <img class="img_xs" src="./assets/book.svg" alt="Book" />
         </div>
@@ -49,5 +59,30 @@
         </div>
       </div>
     </nav>
+
+    <div id="sidebar" class="active">
+      <div class="back-button" onclick="toggleNav()" >
+        <img src="./assets/back.svg" alt="Back" />
+      </div>
+      <ul>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <h2>My COntent</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit non
+        autem sed sint iste quidem sapiente, voluptatem doloremque repellendus
+        facilis et itaque in asperiores voluptatum similique molestiae, fugiat
+        error? Ratione!
+      </p>
+    </div>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

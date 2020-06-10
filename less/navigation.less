@@ -4,23 +4,45 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem;
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
 
-  .nav__logo {
+  @media only screen and (max-width: 500px) {
+    padding: 1rem 0.5rem;
+  }
+
+  .nav__left {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    .nav__menu {
+      display: none;
+      cursor: pointer;
+      margin-right: 1rem;
 
-    .nav__logo__text {
-      margin: 0 1rem;
-      h3 {
-        margin: 0.3rem 0;
-        font-weight: 300;
+      @media only screen and (max-width: 660px) {
+        display: flex;
       }
-      p {
-        font-size: 0.8rem;
-        color: @grey;
-        font-weight: 300;
+    }
+    .nav__logo {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .nav__logo__text {
+        margin: 0 1rem;
+        h3 {
+          margin: 0.3rem 0;
+          font-weight: 300;
+        }
+        p {
+          font-size: 0.8rem;
+          color: @grey;
+          font-weight: 300;
+        }
+
+        @media only screen and (max-width: 1100px) {
+          display: none;
+        }
       }
     }
   }
@@ -33,6 +55,19 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media only screen and (max-width: 1200px) {
+      width: 40%;
+    }
+
+    @media only screen and (max-width: 850px) {
+      width: 50%;
+    }
+
+    @media only screen and (max-width: 660px) {
+      display: none;
+    }
+
     input {
       border: none;
       font-family: @primaryFont;
@@ -57,6 +92,17 @@ nav {
 
     .nav__links__item {
       padding: 0 1rem;
+      @media only screen and (max-width: 500px) {
+        padding: 0 0.5rem;
+      }
+    }
+
+    .search-icon {
+      display: none;
+
+      @media only screen and (max-width: 660px) {
+        display: block;
+      }
     }
 
     .notification {
@@ -67,9 +113,9 @@ nav {
         top: -7px;
         right: -2px;
         color: @white;
-        font-size: 12px;
+        font-size: 10px;
         background: @lightGreen;
-        padding: 5px;
+        padding: 6px;
         border-radius: 50%;
         display: flex;
         flex-wrap: wrap;
@@ -89,4 +135,58 @@ nav {
     height: 50px;
     border-radius: 50%;
   }
+}
+
+#sidebar {
+  position: fixed;
+  left: -200px;
+  background: #ffffff;
+  height: 100%;
+  transition: all 500ms linear;
+  // text-align: center;
+  position: fixed;
+  box-shadow: -10px 0px 40px rgba(0, 0, 0, 0.1);
+  // background: rgba(0, 0, 0, 0.35);
+  @media only screen and (max-width: 660px) {
+    bottom: 0;
+    top: 0;
+    z-index: 99;
+  }
+
+  .back-button {
+    display: none;
+
+    @media only screen and (max-width: 660px) {
+      display: flex;
+    }
+  }
+}
+
+#sidebar.active {
+  left: 0;
+  width: 350px;
+
+  @media only screen and (max-width: 500px) {
+    width: 200px;
+  }
+}
+
+#sidebar ul li {
+  color: red;
+  list-style: none;
+  padding: 20px 30px;
+  border-bottom: 1px solid green;
+}
+
+// .sidebar .button-area {
+
+// }
+
+.main-content {
+  width: 900px;
+  margin: 0 auto;
+  // padding: 7%;
+}
+
+.main-content h2 {
 }
