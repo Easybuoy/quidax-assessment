@@ -1,5 +1,11 @@
+const setActive = () => {
+  if (window.screen.width > 1000) {
+    document.getElementById("sidebar").classList.add("active");
+  }
+};
+
 window.addEventListener("click", (e) => {
-  if (window.screen.width < 660) {
+  if (window.screen.width < 1000) {
     if (document.getElementById("sidebar").contains(e.target)) {
       if (e.target.alt === "Back") {
         document.getElementById("sidebar").classList.remove("active");
@@ -12,12 +18,12 @@ window.addEventListener("click", (e) => {
   }
 });
 
-window.addEventListener("resize", () => {
-  if (window.screen.width > 660) {
-  }
-  //   console.log(window.screen.width);
-});
+// window.addEventListener("resize", () => {
+//   console.log(window.screen);
+// });
 
 const toggleNav = () => {
   document.getElementById("sidebar").classList.add("active");
 };
+
+setActive();
