@@ -22,8 +22,42 @@ window.addEventListener("click", (e) => {
 //   console.log(window.screen);
 // });
 
+document.getElementById("mobile-search");
+
 const toggleNav = () => {
   document.getElementById("sidebar").classList.add("active");
+};
+
+const toggleSearch = () => {
+  const navLeft = document.getElementsByClassName("nav__left")[0];
+  navLeft.style.display = "none";
+
+  const navSearch = document.getElementsByClassName("nav__search")[0];
+  navSearch.style.display = "flex";
+  navSearch.style.width = "80%";
+  navSearch.style.marginRight = "0.5rem";
+
+  const navLinks = document.getElementsByClassName("nav__links")[0];
+  navLinks.style.display = "none";
+
+  const navButton = document.getElementsByClassName("nav__button")[0];
+  navButton.style.display = "flex";
+};
+
+const toggleBackButton = () => {
+  const navLeft = document.getElementsByClassName("nav__left")[0];
+  navLeft.style.display = "flex";
+
+  const navSearch = document.getElementsByClassName("nav__search")[0];
+  navSearch.style.display = "none";
+  // navSearch.style.width = "80%";
+  // navSearch.style.marginRight = "0.5rem";
+
+  const navLinks = document.getElementsByClassName("nav__links")[0];
+  navLinks.style.display = "flex";
+
+  const navButton = document.getElementsByClassName("nav__button")[0];
+  navButton.style.display = "none";
 };
 
 setActive();

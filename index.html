@@ -12,6 +12,10 @@
   </head>
   <body>
     <nav>
+      <div class="nav__button" onclick="toggleBackButton()">
+        <img src="./assets/back.svg" alt="Back" />
+      </div>
+
       <div class="nav__left">
         <div class="nav__menu" onclick="toggleNav()">
           <img src="./assets/menu.svg" alt="Menu" />
@@ -38,7 +42,11 @@
       </div>
 
       <div class="nav__links">
-        <div class="nav__links__item search-icon">
+        <div
+          id="mobile-search"
+          onclick="toggleSearch()"
+          class="nav__links__item search-icon"
+        >
           <img src="./assets/search.svg" alt="Search" />
         </div>
 
