@@ -149,16 +149,18 @@ nav {
   transition: all 500ms linear;
   box-shadow: -10px 0px 40px rgba(0, 0, 0, 0.1);
   overflow-y: scroll;
+  z-index: 66;
+  width: 0;
 
   @media only screen and (max-width: 1000px) {
     bottom: 0;
     top: 0;
-    z-index: 99;
+    z-index: 3;
   }
 
   .logo {
     display: none;
-    @media only screen and (max-width: 660px) {
+    @media only screen and (max-width: 1000px) {
       .logo();
 
       justify-content: flex-start;
@@ -216,7 +218,7 @@ nav {
       justify-content: space-between;
       align-items: center;
       padding: 0 1rem;
-      margin: 0.5rem 0;
+      margin: 1rem 0;
 
       .active {
         color: @lightGreen;

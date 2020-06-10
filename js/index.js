@@ -1,6 +1,10 @@
 const setActive = () => {
   if (window.screen.width > 1000) {
     document.getElementById("sidebar").classList.add("active");
+
+    // document.getElementById("sidebar").style.width = "350px";
+    // document.getElementsByClassName("main-content")[0].style.marginLeft =
+    //   "350px";
   }
 };
 
@@ -12,20 +16,32 @@ window.addEventListener("click", (e) => {
       }
     } else {
       if (!(e.target.alt === "Menu")) {
+        if (window.screen.width > 1000) {
+          document.getElementById("sidebar").style.width = "0";
+          document.getElementsByClassName("main-content")[0].style.marginLeft =
+            "0";
+        }
+
         document.getElementById("sidebar").classList.remove("active");
       }
     }
   }
 });
 
-// window.addEventListener("resize", () => {
-//   console.log(window.screen);
-// });
+window.addEventListener("resize", () => {
+  setActive();
+});
 
 document.getElementById("mobile-search");
 
 const toggleNav = () => {
-  document.getElementById("sidebar").classList.add("active");
+  const sidebar = document.getElementById("sidebar").classList.add("active");
+  console.log("---");
+  if (window.screen.width > 1000) {
+    document.getElementById("sidebar").style.width = "350px";
+    document.getElementsByClassName("main-content")[0].style.marginLeft =
+      "350px";
+  }
 };
 
 const toggleSearch = () => {

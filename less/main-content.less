@@ -3,15 +3,40 @@
   //   max-width: 900px;
   //   width: 100%;
 
-  //   position: absolute;
-  //   margin: 2rem auto;
-  //   left: 22%;
-  //   right: 1%;
-  //   background-color: red;
-  //   height: 83vh;
+  overflow-y: scroll;
+  height: 83vh;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
-  margin: 2rem 0 0 23%;
+  transition: margin-left 0.5s;
+  overflow: hidden;
+  width: 100%;
+
+  @media only screen and (min-width: 1000px) {
+    background-color: red;
+    position: absolute;
+    margin: 2rem 0;
+    width: auto;
+    left: 22%;
+    right: 1%;
+  }
+
+  @media only screen and (max-width: 1630px) {
+    left: 25%;
+  }
+
+  @media only screen and (max-width: 1420px) {
+    left: 30%;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    left: 35%;
+  }
+
+  @media only screen and (max-width: 1020px) {
+    left: 37%;
+  }
+
+  //   width: 75%;
+  //   margin: 2rem 0 0 23%;
 }
