@@ -41,22 +41,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 2rem 0;
 
     .main-content__book {
       display: flex;
       flex-wrap: wrap;
-      margin: 2rem 2rem 2rem 0;
-      //   padding: 1rem;
+      margin-right: 2rem;
+      transition: all 0.3s ease-in-out;
+
       &:hover {
         background: #ffffff;
-        box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
         cursor: pointer;
       }
 
       .main-content__book_image {
         margin-right: 1rem;
         width: 106px;
-        height: 150px;
+        height: 100%;
 
         img {
           width: 100%;
@@ -65,32 +67,36 @@
       }
 
       .main-content__book_detail {
+        padding: 0.5rem;
         .main-content__book_status {
+          margin-top: 0.5rem;
           color: @lightGreen;
+          font-size: 0.8rem;
         }
 
         .main-content__book_title {
           font-weight: 600;
-          margin: 1rem 0;
+          margin: 0.5rem 0;
         }
 
         .main-content__book_creation {
           display: flex;
           margin: 0.5rem 0;
+          p {
+            font-size: 0.9rem;
+          }
         }
 
         .main-content__book_genre {
+          font-size: 0.9rem;
         }
 
         .main-content__book_popularity_detail {
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-start;
-          //   align-items: center;
 
           hr {
-            // border: 0;
-            // height: 1px;
             border: 0.5px solid #dddddd;
           }
           .main-content__book_ratings_container {
@@ -100,6 +106,7 @@
 
             p {
               margin: 0.5rem 0;
+              font-size: 0.9rem;
             }
           }
 
