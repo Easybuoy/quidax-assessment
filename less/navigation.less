@@ -3,7 +3,6 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  font-family: "Ubuntu", sans-serif;
   padding: 1.2rem;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
 
@@ -27,6 +26,28 @@ nav {
   }
 
   .nav__search {
+    align-items: center;
+    border: 1px solid #dddddd;
+    width: 30%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    input {
+      border: none;
+      font-family: @primaryFont;
+      padding: 0.7rem;
+      min-width: 80%;
+    }
+
+    .search-icon {
+      background: #f9f9fb;
+      height: 100%;
+      border-left: 1px solid #dddddd;
+      img {
+        padding: 0.7rem;
+      }
+    }
   }
 
   .nav__links {
@@ -46,10 +67,9 @@ nav {
         top: -7px;
         right: -2px;
         color: @white;
-        font-size: 10px;
+        font-size: 12px;
         background: @lightGreen;
-        padding: 4px;
-
+        padding: 5px;
         border-radius: 50%;
         display: flex;
         flex-wrap: wrap;
