@@ -50,8 +50,6 @@ const toggleBackButton = () => {
 
   const navSearch = document.getElementsByClassName("nav__search")[0];
   navSearch.style.display = "none";
-  // navSearch.style.width = "80%";
-  // navSearch.style.marginRight = "0.5rem";
 
   const navLinks = document.getElementsByClassName("nav__links")[0];
   navLinks.style.display = "flex";
