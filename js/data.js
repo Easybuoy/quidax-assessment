@@ -60,3 +60,5 @@ const data = [
     status: "Available",
   },
 ];
+
+export default data;
