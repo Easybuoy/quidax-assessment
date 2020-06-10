@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "less-watch-compiler --run-once",
-    "compile:dev": "less-watch-compiler",
-    "start": "live-server"
+    "compile:dev": "less-watch-compiler"
   },
   "repository": {
     "type": "git",
@@ -20,8 +19,7 @@
   },
   "homepage": "https://github.com/Easybuoy/quidax#readme",
   "dependencies": {
-    "less-watch-compiler": "^1.14.6",
-    "live-server": "^1.2.1"
+    "less-watch-compiler": "^1.14.6"
   },
   "devDependencies": {}
 }
