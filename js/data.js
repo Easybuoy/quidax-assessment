@@ -61,4 +61,29 @@ const data = [
   },
 ];
 
-export default data;
+const loadFeaturedBooks = (books) => {
+  const booksContainer = document.querySelector(
+    ".main-content__books_container"
+  );
+
+  books.forEach((book) => {
+    const newbook = document.createElement("div");
+    newbook.className = "main-content__book";
+
+    const bookImageContainer = document.createElement("div");
+    bookImageContainer.className = "main-content__book_image";
+
+    const bookImage = document.createElement("img");
+    bookImage.src = book.image;
+    bookImage.alt = book.title;
+
+    bookImageContainer.appendChild(bookImage);
+    newbook.appendChild(bookImageContainer);
+    booksContainer.appendChild(newbook);
+    console.log(book);
+  });
+  console.log(booksContainer);
+  return booksContainer;
+};
+
+loadFeaturedBooks(data);
