@@ -6,7 +6,7 @@
   transition: margin-left 0.5s;
   width: 100%;
 
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 1200px) {
     position: absolute;
     margin: 2rem 0;
     width: auto;
@@ -36,9 +36,13 @@
     justify-content: flex-start;
     margin: 2rem 0;
 
-    // @media only screen and (max-width: 1200px) {
-    //   margin: 2rem;
-    // }
+    @media only screen and (max-width: 1200px) {
+      margin: 2rem;
+    }
+
+    @media only screen and (max-width: 770px) {
+      justify-content: center;
+    }
 
     .main-content__h4 {
       text-transform: uppercase;
@@ -53,6 +57,10 @@
       flex-wrap: wrap;
       width: 400px;
       margin-bottom: 2rem;
+
+      @media only screen and (max-width: 1200px) {
+        width: 350px;
+      }
 
       .main-content__book_house {
         display: flex;

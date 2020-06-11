@@ -1,5 +1,5 @@
 const setActive = () => {
-  if (window.screen.width > 1000) {
+  if (window.screen.width > 1200) {
     document.getElementById("sidebar").classList.add("active");
 
     // document.getElementById("sidebar").style.width = "350px";
@@ -9,14 +9,14 @@ const setActive = () => {
 };
 
 window.addEventListener("click", (e) => {
-  if (window.screen.width < 1000) {
+  if (window.screen.width < 1200) {
     if (document.getElementById("sidebar").contains(e.target)) {
       if (e.target.alt === "Back") {
         document.getElementById("sidebar").classList.remove("active");
       }
     } else {
       if (!(e.target.alt === "Menu")) {
-        if (window.screen.width > 1000) {
+        if (window.screen.width > 1200) {
           document.getElementById("sidebar").style.width = "0";
           document.getElementsByClassName("main-content")[0].style.marginLeft =
             "0";
@@ -37,7 +37,7 @@ document.getElementById("mobile-search");
 const toggleNav = () => {
   const sidebar = document.getElementById("sidebar").classList.add("active");
   console.log("---");
-  if (window.screen.width > 1000) {
+  if (window.screen.width > 1200) {
     document.getElementById("sidebar").style.width = "350px";
     document.getElementsByClassName("main-content")[0].style.marginLeft =
       "350px";

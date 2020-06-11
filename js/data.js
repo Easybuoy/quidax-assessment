@@ -197,10 +197,13 @@ const loadFeaturedBooks = (books, section) => {
     newBookHouse.appendChild(bookDetail);
     newbook.appendChild(newBookHouse);
     booksContainer.appendChild(newbook);
-    console.log(book);
   });
-  console.log(booksContainer);
   return booksContainer;
 };
 
-loadFeaturedBooks(data, "Recently Added");
+if (window.screen.width <= 770) {
+  const trimmedData = data.slice(0, 3);
+  loadFeaturedBooks(trimmedData, "Recently Added");
+} else {
+  loadFeaturedBooks(data, "Recently Added");
+}
