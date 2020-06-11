@@ -61,10 +61,15 @@ const data = [
   },
 ];
 
-const loadFeaturedBooks = (books) => {
+const loadFeaturedBooks = (books, section) => {
   const booksContainer = document.querySelector(
     ".main-content__books_container"
   );
+
+  const booksHeader = document.createElement("h4");
+  booksHeader.className = "main-content__h4";
+  booksHeader.textContent = section;
+  booksContainer.appendChild(booksHeader);
 
   books.forEach((book) => {
     const newbook = document.createElement("div");
@@ -198,4 +203,4 @@ const loadFeaturedBooks = (books) => {
   return booksContainer;
 };
 
-loadFeaturedBooks(data);
+loadFeaturedBooks(data, "Recently Added");
