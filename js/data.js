@@ -120,11 +120,29 @@ const loadFeaturedBooks = (books) => {
     const bookRatings = document.createElement("p");
     bookRatings.textContent = `Ratings: ${book.rating.toFixed(1)}`;
 
-    for (let i = 0; i < book.rating; i++) {
-      console.log("--");
-    }
+    const ratingsImageDiv = document.createElement("div");
+    const ratingsImageFilled = document.createElement("img");
+    ratingsImageFilled.src = "./assets/rating-filled.svg";
+    ratingsImageFilled.alt = book.title;
+
+    ratingsImageDiv.appendChild(ratingsImageFilled);
+    const secondRatingsImage = ratingsImageFilled.cloneNode(true);
+    ratingsImageDiv.appendChild(secondRatingsImage);
+    const thirdRatingsImage = ratingsImageFilled.cloneNode(true);
+    ratingsImageDiv.appendChild(thirdRatingsImage);
+    const fourthRatingsImage = ratingsImageFilled.cloneNode(true);
+    ratingsImageDiv.appendChild(fourthRatingsImage);
+    const fifthRatingsImage = document.createElement("img");
+    fifthRatingsImage.src = "./assets/rating.svg";
+    fifthRatingsImage.alt = book.title;
+    ratingsImageDiv.appendChild(fifthRatingsImage);
+
+    // for (let i = 0; i < book.rating; i++) {
+    //   console.log("--");
+    // }
 
     bookRatingsContainer.appendChild(bookRatings);
+    bookRatingsContainer.appendChild(ratingsImageDiv);
     bookPopularityDetail.appendChild(bookRatingsContainer);
 
     bookDetail.appendChild(availability);
