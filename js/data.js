@@ -61,10 +61,171 @@ const data = [
   },
 ];
 
+const allBooks = [
+  {
+    id: 1,
+    title: "The Effective Engineer",
+    author: ["Edmond Lau"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2009,
+    image: "../assets/books/the-effective-engineer.png",
+    status: "Available",
+  },
+  {
+    id: 2,
+    title: "Built To Last",
+    author: ["Jim Collins", "Jerry I. Porras"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2001,
+    image: "../assets/books/built-to-last.png",
+    status: "Borrowed Out",
+  },
+  {
+    id: 3,
+    title: "The Lean Startup",
+    author: ["Eric Reis"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2005,
+    image: "../assets/books/the-lean-startup.png",
+    status: "Available",
+  },
+  {
+    id: 4,
+    title: "Effective Python",
+    author: ["Diomidis Spinellis"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: null,
+    image: "../assets/books/effective-python.png",
+    status: "Available",
+  },
+  {
+    id: 5,
+    title: "Big Magic",
+    author: ["Elizabeth Gilbert"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2014,
+    image: "../assets/books/big-magic.png",
+    status: "Available",
+  },
+  {
+    id: 6,
+    title: "Big Magic",
+    author: ["Elizabeth Gilbert"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2014,
+    image: "../assets/books/effective-python.png",
+    status: "Available",
+  },
+  {
+    id: 7,
+    title: "The Effective Engineer",
+    author: ["Edmond Lau"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2009,
+    image: "../assets/books/the-effective-engineer.png",
+    status: "Available",
+  },
+  {
+    id: 8,
+    title: "Built To Last",
+    author: ["Jim Collins", "Jerry I. Porras"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2001,
+    image: "../assets/books/built-to-last.png",
+    status: "Borrowed Out",
+  },
+  {
+    id: 9,
+    title: "The Lean Startup",
+    author: ["Eric Reis"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2005,
+    image: "../assets/books/the-lean-startup.png",
+    status: "Available",
+  },
+  {
+    id: 10,
+    title: "Effective Python",
+    author: ["Diomidis Spinellis"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: null,
+    image: "../assets/books/effective-python.png",
+    status: "Available",
+  },
+  {
+    id: 11,
+    title: "Big Magic",
+    author: ["Elizabeth Gilbert"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2014,
+    image: "../assets/books/big-magic.png",
+    status: "Available",
+  },
+  {
+    id: 12,
+    title: "Big Magic",
+    author: ["Elizabeth Gilbert"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2014,
+    image: "../assets/books/the-effective-engineer.png",
+    status: "Available",
+  },
+  {
+    id: 13,
+    title: "The Lean Startup",
+    author: ["Eric Reis"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2005,
+    image: "../assets/books/the-lean-startup.png",
+    status: "Available",
+  },
+];
+
 const loadFeaturedBooks = (books, section) => {
-  const booksContainer = document.querySelector(
-    ".main-content__books_container"
-  );
+  const recentlyAdded = document.querySelector("#recently_added");
+
+  const booksContainer = document.createElement("div");
+  booksContainer.className = "main-content__books_container";
+  booksContainer.id = "featured";
 
   const booksHeader = document.createElement("h4");
   booksHeader.className = "main-content__h4";
@@ -198,12 +359,19 @@ const loadFeaturedBooks = (books, section) => {
     newbook.appendChild(newBookHouse);
     booksContainer.appendChild(newbook);
   });
+  recentlyAdded.appendChild(booksContainer);
+
   return booksContainer;
 };
 
 if (window.screen.width <= 770) {
   const trimmedData = data.slice(0, 3);
+  const allBooksTrimmedData = allBooks.slice(0, 5);
+
   loadFeaturedBooks(trimmedData, "Recently Added");
+  loadFeaturedBooks(allBooksTrimmedData, "All Books");
 } else {
+  isLargeScreen = true;
   loadFeaturedBooks(data, "Recently Added");
+  loadFeaturedBooks(allBooks, "All Books");
 }
