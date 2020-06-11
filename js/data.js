@@ -79,6 +79,24 @@ const loadFeaturedBooks = (books) => {
 
     bookImageContainer.appendChild(bookImage);
     newbook.appendChild(bookImageContainer);
+
+    const bookDetail = document.createElement("div");
+    bookDetail.className = "main-content__book_detail";
+
+    const availability = document.createElement("p");
+    availability.className = `main-content__book_status ${
+      book.status !== "Available" && "unavailable"
+    }`;
+    availability.textContent = book.status;
+
+    const bookTitle = document.createElement("h5");
+    bookTitle.className = "main-content__book_title";
+    bookTitle.textContent = book.title;
+
+    
+    bookDetail.appendChild(availability);
+    bookDetail.appendChild(bookTitle);
+    newbook.appendChild(bookDetail);
     booksContainer.appendChild(newbook);
     console.log(book);
   });
