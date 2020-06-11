@@ -1,42 +1,6 @@
 const data = [
   {
     id: 1,
-    title: "Built To Last",
-    author: ["Jim Collins", "Jerry I. Porras"],
-    genre: ["Business", "Entrepreneurship"],
-    rating: 4.0,
-    likes: 29,
-    people: 31,
-    date_publushed: 2001,
-    image: "../assets/books/built-to-last.png",
-    status: "Borrowed Out",
-  },
-  {
-    id: 2,
-    title: "Effective Python",
-    author: ["Diomidis Spinellis"],
-    genre: ["Motivational"],
-    rating: 4.0,
-    likes: 29,
-    people: 31,
-    date_publushed: null,
-    image: "../assets/books/effective-python.png",
-    status: "Available",
-  },
-  {
-    id: 3,
-    title: "Big Magic",
-    author: ["Elizabeth Gilbert"],
-    genre: ["Business", "Entrepreneurship"],
-    rating: 4.0,
-    likes: 29,
-    people: 31,
-    date_publushed: 2014,
-    image: "../assets/books/big-magic.png",
-    status: "Available",
-  },
-  {
-    id: 4,
     title: "The Effective Engineer",
     author: ["Edmond Lau"],
     genre: ["Motivational"],
@@ -48,7 +12,19 @@ const data = [
     status: "Available",
   },
   {
-    id: 5,
+    id: 2,
+    title: "Built To Last",
+    author: ["Jim Collins", "Jerry I. Porras"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2001,
+    image: "../assets/books/built-to-last.png",
+    status: "Borrowed Out",
+  },
+  {
+    id: 3,
     title: "The Lean Startup",
     author: ["Eric Reis"],
     genre: ["Motivational"],
@@ -57,6 +33,30 @@ const data = [
     people: 31,
     date_publushed: 2005,
     image: "../assets/books/the-lean-startup.png",
+    status: "Available",
+  },
+  {
+    id: 4,
+    title: "Effective Python",
+    author: ["Diomidis Spinellis"],
+    genre: ["Motivational"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: null,
+    image: "../assets/books/effective-python.png",
+    status: "Available",
+  },
+  {
+    id: 5,
+    title: "Big Magic",
+    author: ["Elizabeth Gilbert"],
+    genre: ["Business", "Entrepreneurship"],
+    rating: 4.0,
+    likes: 29,
+    people: 31,
+    date_publushed: 2014,
+    image: "../assets/books/big-magic.png",
     status: "Available",
   },
 ];
@@ -70,6 +70,9 @@ const loadFeaturedBooks = (books) => {
     const newbook = document.createElement("div");
     newbook.className = "main-content__book";
 
+    const newBookHouse = document.createElement("div");
+    newBookHouse.className = "main-content__book_house";
+
     const bookImageContainer = document.createElement("div");
     bookImageContainer.className = "main-content__book_image";
 
@@ -78,7 +81,7 @@ const loadFeaturedBooks = (books) => {
     bookImage.alt = book.title;
 
     bookImageContainer.appendChild(bookImage);
-    newbook.appendChild(bookImageContainer);
+    newBookHouse.appendChild(bookImageContainer);
 
     const bookDetail = document.createElement("div");
     bookDetail.className = "main-content__book_detail";
@@ -103,7 +106,9 @@ const loadFeaturedBooks = (books) => {
     bookCreation.appendChild(bookAuthor);
 
     const bookCreationYear = document.createElement("p");
-    bookCreationYear.textContent = `\xa0 - ${book.date_publushed}`;
+    if (book.date_publushed) {
+      bookCreationYear.textContent = `\xa0 - ${book.date_publushed}`;
+    }
 
     bookCreation.appendChild(bookCreationYear);
 
@@ -141,16 +146,51 @@ const loadFeaturedBooks = (books) => {
     //   console.log("--");
     // }
 
+    const hr = document.createElement("hr");
+
+    const bookUsers = document.createElement("div");
+    bookUsers.className = "main-content__book_users_container";
+
+    const bookUsersPeople = document.createElement("div");
+
+    const bookUsersPeopleImage = document.createElement("img");
+    bookUsersPeopleImage.src = "./assets/users.svg";
+    bookUsersPeopleImage.alt = "Users";
+
+    const bookUsersImageText = document.createElement("p");
+    bookUsersImageText.textContent = book.people;
+
+    bookUsersPeople.appendChild(bookUsersPeopleImage);
+    bookUsersPeople.appendChild(bookUsersImageText);
+
+    const bookUsersLikes = document.createElement("div");
+
+    const bookUsersLikesImage = document.createElement("img");
+    bookUsersLikesImage.src = "./assets/like.svg";
+    bookUsersLikesImage.alt = "Users";
+
+    const bookUsersLikeImageText = document.createElement("p");
+    bookUsersLikeImageText.textContent = book.likes;
+
+    bookUsersLikes.appendChild(bookUsersLikesImage);
+    bookUsersLikes.appendChild(bookUsersLikeImageText);
+
+    bookUsers.appendChild(bookUsersPeople);
+    bookUsers.appendChild(bookUsersLikes);
+
     bookRatingsContainer.appendChild(bookRatings);
     bookRatingsContainer.appendChild(ratingsImageDiv);
     bookPopularityDetail.appendChild(bookRatingsContainer);
+    bookPopularityDetail.appendChild(hr);
+    bookPopularityDetail.appendChild(bookUsers);
 
     bookDetail.appendChild(availability);
     bookDetail.appendChild(bookTitle);
     bookDetail.appendChild(bookCreation);
     bookDetail.appendChild(bookGenre);
     bookDetail.appendChild(bookPopularityDetail);
-    newbook.appendChild(bookDetail);
+    newBookHouse.appendChild(bookDetail);
+    newbook.appendChild(newBookHouse);
     booksContainer.appendChild(newbook);
     console.log(book);
   });

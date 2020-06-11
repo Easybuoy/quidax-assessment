@@ -46,18 +46,23 @@
     .main-content__book {
       display: flex;
       flex-wrap: wrap;
-      margin-right: 5rem;
-      transition: all 0.3s ease-in-out;
+      width: 400px;
       margin-bottom: 2rem;
 
-      &:hover {
-        background: #ffffff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
+      .main-content__book_house {
+        display: flex;
+        flex-wrap: wrap;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background: #ffffff;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+        }
       }
 
       .main-content__book_image {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
         width: 106px;
         // height: 150px;
         height: 100%;
@@ -70,6 +75,7 @@
 
       .main-content__book_detail {
         padding: 0.5rem;
+        width: 200px;
         .main-content__book_status {
           margin-top: 0.5rem;
           color: @lightGreen;
