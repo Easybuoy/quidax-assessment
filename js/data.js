@@ -107,9 +107,31 @@ const loadFeaturedBooks = (books) => {
 
     bookCreation.appendChild(bookCreationYear);
 
+    const bookGenre = document.createElement("p");
+    bookGenre.className = "main-content__book_genre";
+    bookGenre.textContent = book.genre.join(", ");
+
+    const bookPopularityDetail = document.createElement("div");
+    bookPopularityDetail.className = "main-content__book_popularity_detail";
+
+    const bookRatingsContainer = document.createElement("div");
+    bookRatingsContainer.className = "main-content__book_ratings_container";
+
+    const bookRatings = document.createElement("p");
+    bookRatings.textContent = `Ratings: ${book.rating.toFixed(1)}`;
+
+    for (let i = 0; i < book.rating; i++) {
+      console.log("--");
+    }
+
+    bookRatingsContainer.appendChild(bookRatings);
+    bookPopularityDetail.appendChild(bookRatingsContainer);
+
     bookDetail.appendChild(availability);
     bookDetail.appendChild(bookTitle);
     bookDetail.appendChild(bookCreation);
+    bookDetail.appendChild(bookGenre);
+    bookDetail.appendChild(bookPopularityDetail);
     newbook.appendChild(bookDetail);
     booksContainer.appendChild(newbook);
     console.log(book);
