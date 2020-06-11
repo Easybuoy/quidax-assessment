@@ -93,9 +93,23 @@ const loadFeaturedBooks = (books) => {
     bookTitle.className = "main-content__book_title";
     bookTitle.textContent = book.title;
 
-    
+    const bookCreation = document.createElement("div");
+    bookCreation.className = "main-content__book_creation";
+
+    const bookAuthor = document.createElement("p");
+    bookAuthor.className = "main-content__book_character";
+    bookAuthor.textContent = book.author.join(", ");
+
+    bookCreation.appendChild(bookAuthor);
+
+    const bookCreationYear = document.createElement("p");
+    bookCreationYear.textContent = `\xa0 - ${book.date_publushed}`;
+
+    bookCreation.appendChild(bookCreationYear);
+
     bookDetail.appendChild(availability);
     bookDetail.appendChild(bookTitle);
+    bookDetail.appendChild(bookCreation);
     newbook.appendChild(bookDetail);
     booksContainer.appendChild(newbook);
     console.log(book);
