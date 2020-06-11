@@ -50,8 +50,7 @@ const toggleSearch = () => {
 
   const navSearch = document.getElementsByClassName("nav__search")[0];
   navSearch.style.display = "flex";
-  navSearch.style.width = "80%";
-  navSearch.style.marginRight = "0.5rem";
+  navSearch.className = "nav__search nav__search__mobile";
 
   const navLinks = document.getElementsByClassName("nav__links")[0];
   navLinks.style.display = "none";
