@@ -39,7 +39,13 @@
 
       <div class="nav__search">
         <div class="nav__search__container">
-          <input placeholder="Search books, genres, authors, etc." />
+          <input
+            placeholder="Search books, genres, authors, etc."
+            onchange="toggleSearchResults()"
+            onfocus="toggleSearchResults()"
+            onblur="toggleSearchResults()"
+            id="input"
+          />
 
           <div class="search-icon">
             <img src="./assets/search.svg" alt="Search" />
@@ -47,9 +53,9 @@
         </div>
 
         <div class="nav__search__suggestions">
-          <div>Uindsfisdfs</div>
-          <div>Nigeria</div>
-          <div>Ghana</div>
+          <div onclick="toggleSearchResults()">Uindsfisdfs</div>
+          <div onclick="toggleSearchResults()">Nigeria</div>
+          <div onclick="toggleSearchResults()">Ghana</div>
         </div>
       </div>
 
@@ -244,7 +250,8 @@
     </section>
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/data.js"></script>
+    <script src="./js/books.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

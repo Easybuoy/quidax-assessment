@@ -92,7 +92,10 @@ nav {
         border: none;
         font-family: @primaryFont;
         padding: 0.7rem;
-
+        width: 80%;
+        @media only screen and (max-width: 440px) {
+          width: 60%;
+        }
         &:focus {
           border: none;
           outline: none;
@@ -117,6 +120,7 @@ nav {
       z-index: 90;
       position: absolute;
       padding-bottom: 1rem;
+      display: none;
 
       @media only screen and (max-width: 1200px) {
         width: calc(40% - 15px);
@@ -124,6 +128,10 @@ nav {
 
       @media only screen and (max-width: 850px) {
         width: calc(50% - 18px);
+      }
+
+      @media only screen and (max-width: 440px) {
+        width: calc(60% -22px);
       }
 
       div {
@@ -140,6 +148,10 @@ nav {
           color: white;
         }
       }
+    }
+
+    .shown_suggestions {
+      display: block;
     }
   }
 
