@@ -92,10 +92,11 @@ nav {
         border: none;
         font-family: @primaryFont;
         padding: 0.7rem;
-        min-width: 80%;
-        // @media only screen and (max-width: 450px) {
-        //   width: 30%;
-        // }
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
       }
 
       .search-icon {
@@ -116,6 +117,14 @@ nav {
       z-index: 90;
       position: absolute;
       padding-bottom: 1rem;
+
+      @media only screen and (max-width: 1200px) {
+        width: calc(40% - 15px);
+      }
+
+      @media only screen and (max-width: 850px) {
+        width: calc(50% - 18px);
+      }
 
       div {
         padding: 15px;
@@ -140,6 +149,15 @@ nav {
 
     input {
       min-width: auto;
+    }
+
+    .nav__search__suggestions {
+      width: calc(70% - 26px);
+
+      @media only screen and (max-width: 500px) {
+        top: 60px;
+        width: calc(70% - 10px);
+      }
     }
   }
 
@@ -200,7 +218,7 @@ nav {
   left: -400px;
   background: #ffffff;
   height: 100%;
-  transition: all 500ms linear;
+  transition: all 100ms linear;
   box-shadow: -10px 0px 40px rgba(0, 0, 0, 0.1);
   overflow-y: scroll;
   z-index: 66;
