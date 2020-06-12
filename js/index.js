@@ -1,5 +1,3 @@
-
-
 const setActive = () => {
   if (window.screen.width > 1200) {
     document.getElementById("sidebar").classList.add("active");
@@ -7,10 +5,6 @@ const setActive = () => {
     document.getElementById("sidebar").classList.remove("active");
   }
 };
-
-
-
-
 
 window.addEventListener("click", (e) => {
   if (window.screen.width < 1200) {
@@ -36,26 +30,26 @@ window.addEventListener("resize", () => {
   setSearchPlaceholder();
   //   toggleSearch(window.screen.width);
 
-  //   if (window.screen.width > 660) {
-  //     const navLeft = document.querySelector(".nav__left");
-  //     navLeft.style.display = "flex";
+  if (window.screen.width > 660) {
+    const navLeft = document.querySelector(".nav__left");
+    navLeft.style.display = "flex";
 
-  //     const navSearch = document.querySelector(".nav__search");
-  //     navSearch.style.display = "flex";
+    const navSearch = document.querySelector(".nav__search");
+    navSearch.style.display = "flex";
 
-  //     const navLinks = document.querySelector(".nav__links");
-  //     navLinks.style.display = "flex";
+    const navLinks = document.querySelector(".nav__links");
+    navLinks.style.display = "flex";
 
-  //     const navButton = document.querySelector(".nav__button");
-  //     navButton.style.display = "none";
-  //   }
-  //   else {
-  //     const navSearch = document.querySelector(".nav__search");
-  //     navSearch.style.display = "none";
-  //   }
+    const navButton = document.querySelector(".nav__button");
+    navButton.style.display = "none";
+    document
+      .getElementById("searchContainer")
+      .classList.remove("nav__search__mobile");
+  } else {
+    const navSearch = document.querySelector(".nav__search");
+    navSearch.style.display = "none";
+  }
 });
-
-document.getElementById("mobile-search");
 
 const toggleNav = () => {
   const sidebar = document.getElementById("sidebar").classList.add("active");
@@ -64,7 +58,6 @@ const toggleNav = () => {
     document.querySelector("main-content").style.marginLeft = "350px";
   }
 };
-
 
 const toggleBackButton = () => {
   const navLeft = document.querySelector(".nav__left");

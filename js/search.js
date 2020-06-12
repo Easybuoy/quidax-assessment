@@ -10,13 +10,12 @@ const setSearchPlaceholder = () => {
 
 const onSearchChange = (e) => {
   const inputValue = document.getElementById("input").value;
-  console.log(inputValue);
+
   const filteredSearchResults = searchResultsData.filter((searchItem) =>
     searchItem.toLocaleLowerCase().startsWith(inputValue.toLocaleLowerCase())
   );
 
   loadSearchData(filteredSearchResults, inputValue.length);
-  console.log(filteredSearchResults, inputValue.length);
 };
 
 const loadSearchData = (searchResultsData, charactersToBeHighlighted = 0) => {
@@ -45,7 +44,7 @@ const loadSearchData = (searchResultsData, charactersToBeHighlighted = 0) => {
         highlightSpan.classList.add("span");
       }
       const remainingSpan = document.createElement("span");
-      console.log(highlightedText, remainingText);
+
       const searchItemDiv = document.createElement("div");
       searchItemDiv.className = "nav__search__suggestions__item";
       remainingSpan.textContent =
@@ -93,7 +92,7 @@ const toggleSearch = (width = 660) => {
 
 const toggleSearchResults = () => {
   loadSearchData(searchResultsData);
-  console.log("=sss");
+
   const searchSugesstions = document.querySelector(".nav__search__suggestions");
   searchSugesstions.classList.toggle("shown_suggestions");
 };
