@@ -15,22 +15,29 @@ const onSearchChange = (e) => {
     searchItem.toLocaleLowerCase().startsWith(inputValue)
   );
 
-  loadSearchData(filteredSearchResults);
-  console.log(filteredSearchResults);
+  loadSearchData(filteredSearchResults, inputValue.length);
+  console.log(filteredSearchResults, inputValue.length);
 };
 
-const loadSearchData = (searchResultsData) => {
-    
+const loadSearchData = (searchResultsData, charactersToBeHighlighted = 0) => {
   const searchSuggestions = document.querySelector(".nav__search__suggestions");
-
   searchSuggestions.innerHTML = "";
-  searchResultsData.forEach((searchItem) => {
+  if (searchResultsData.length === 0) {
     const searchItemDiv = document.createElement("div");
-    searchItemDiv.className = "nav__search__suggestions__item";
-    searchItemDiv.textContent = searchItem;
+    searchItemDiv.className =
+      "nav__search__suggestions__item nav__search__suggestions__item_default";
+    searchItemDiv.textContent = "No results found with search criteria";
 
     searchSuggestions.appendChild(searchItemDiv);
-  });
+  } else {
+    searchResultsData.forEach((searchItem) => {
+      const searchItemDiv = document.createElement("div");
+      searchItemDiv.className = "nav__search__suggestions__item";
+      searchItemDiv.textContent = searchItem;
+
+      searchSuggestions.appendChild(searchItemDiv);
+    });
+  }
 };
 const toggleSearch = (width = 660) => {
   if (width <= 660) {

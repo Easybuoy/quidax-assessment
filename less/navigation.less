@@ -120,7 +120,7 @@ nav {
       z-index: 90;
       position: absolute;
       padding-bottom: 1rem;
-      display: none;
+      // display: none;
       overflow-y: scroll;
 
       @media only screen and (max-width: 1200px) {
@@ -144,14 +144,27 @@ nav {
         padding: 15px;
         font-size: 1rem;
         transition: all 0.3s ease-in-out;
-
+        display: flex;
         // position: absolute;
         // margin-bottom: 1rem;
         color: #999999;
+
+        span {
+          color: black;
+        }
         &:hover {
           cursor: pointer;
           background-color: #999999;
           color: white;
+        }
+      }
+
+      .nav__search__suggestions__item_default {
+        transition: none;
+        &:hover {
+          cursor: not-allowed;
+          background-color: white;
+          color: #999999;
         }
       }
     }
