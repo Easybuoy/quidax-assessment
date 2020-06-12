@@ -12,7 +12,7 @@ const onSearchChange = (e) => {
   const inputValue = document.getElementById("input").value;
   console.log(inputValue);
   const filteredSearchResults = searchResultsData.filter((searchItem) =>
-    searchItem.toLocaleLowerCase().startsWith(inputValue)
+    searchItem.toLocaleLowerCase().startsWith(inputValue.toLocaleLowerCase())
   );
 
   loadSearchData(filteredSearchResults, inputValue.length);
@@ -31,9 +31,30 @@ const loadSearchData = (searchResultsData, charactersToBeHighlighted = 0) => {
     searchSuggestions.appendChild(searchItemDiv);
   } else {
     searchResultsData.forEach((searchItem) => {
+      let highlightedText = "";
+      let remainingText = "";
+      const highlightSpan = document.createElement("span");
+      if (charactersToBeHighlighted > 0) {
+        highlightedText = searchItem.slice(0, charactersToBeHighlighted);
+        remainingText = searchItem.slice(
+          charactersToBeHighlighted,
+          searchItem.length
+        );
+
+        highlightSpan.textContent = highlightedText;
+        highlightSpan.classList.add("span");
+      }
+      const remainingSpan = document.createElement("span");
+      console.log(highlightedText, remainingText);
       const searchItemDiv = document.createElement("div");
       searchItemDiv.className = "nav__search__suggestions__item";
-      searchItemDiv.textContent = searchItem;
+      remainingSpan.textContent =
+        charactersToBeHighlighted == 0 ? searchItem : remainingText;
+
+      const pre = document.createElement("pre");
+      pre.appendChild(highlightSpan);
+      pre.appendChild(remainingSpan);
+      searchItemDiv.appendChild(pre);
 
       searchSuggestions.appendChild(searchItemDiv);
     });
