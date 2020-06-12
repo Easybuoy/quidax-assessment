@@ -121,6 +121,7 @@ nav {
       position: absolute;
       padding-bottom: 1rem;
       display: none;
+      overflow-y: scroll;
 
       @media only screen and (max-width: 1200px) {
         width: calc(40% - 15px);
@@ -130,11 +131,16 @@ nav {
         width: calc(50% - 18px);
       }
 
-      @media only screen and (max-width: 440px) {
-        width: calc(60% -22px);
+      @media only screen and (max-width: 660px) {
+        width: 100%;
+        left: 0;
       }
 
-      div {
+      // @media only screen and (max-width: 440px) {
+      //   width: calc(60% -22px);
+      // }
+
+      .nav__search__suggestions__item {
         padding: 15px;
         font-size: 1rem;
         transition: all 0.3s ease-in-out;
@@ -164,12 +170,12 @@ nav {
     }
 
     .nav__search__suggestions {
-      width: calc(70% - 26px);
+      // width: calc(70% - 26px);
 
-      @media only screen and (max-width: 500px) {
-        top: 60px;
-        width: calc(70% - 10px);
-      }
+      // @media only screen and (max-width: 500px) {
+      //   top: 60px;
+      //   width: calc(70% - 10px);
+      // }
     }
   }
 
