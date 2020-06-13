@@ -1,13 +1,11 @@
 const toggleCancel = () => {
   const toggle = document.querySelector(".open");
   const bookOverlay = document.querySelector(".overlay");
-  // const image =
   bookOverlay.classList.add("showBookDetail");
   toggle.style.display = "none";
 };
 
 const toggleOpen = () => {
-  console.log("aa");
   const openToggle = document.querySelector(".open");
   openToggle.style.display = "flex";
 
@@ -16,12 +14,9 @@ const toggleOpen = () => {
 };
 
 const loadCarousel = (carouselData) => {
-  console.log(carouselData);
   const carousel = document.querySelector(".carousel");
-  console.log(carousel);
 
   carouselData.forEach((carouselItem) => {
-    console.log(carouselItem);
     const carouselCell = document.createElement("div");
     carouselCell.className = "carousel-cell";
 
