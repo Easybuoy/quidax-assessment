@@ -151,7 +151,36 @@ const loadCarousel = (carouselData) => {
 
     ratingsContainer.appendChild(rule);
 
-    
+    const popularityDetails = document.createElement("div");
+    popularityDetails.className = "popularity_details";
+
+    const popularityDetailsUsers = document.createElement("div");
+
+    const popularityDetailsUsersImage = document.createElement("img");
+    popularityDetailsUsersImage.alt = "users";
+    popularityDetailsUsersImage.src = "../assets/users-white.svg";
+
+    const popularityDetailsUsersAmount = document.createElement("p");
+    popularityDetailsUsersAmount.textContent = carouselItem.people;
+
+    popularityDetailsUsers.appendChild(popularityDetailsUsersImage);
+    popularityDetailsUsers.appendChild(popularityDetailsUsersAmount);
+
+    const popularityDetailsLikes = document.createElement("div");
+
+    const popularityDetailsLikesImage = document.createElement("img");
+    popularityDetailsLikesImage.alt = "likes";
+    popularityDetailsLikesImage.src = "../assets/like-white.svg";
+
+    const popularityDetailsUsersLikes = document.createElement("p");
+    popularityDetailsUsersLikes.textContent = carouselItem.likes;
+
+    popularityDetailsLikes.appendChild(popularityDetailsLikesImage);
+    popularityDetailsLikes.appendChild(popularityDetailsUsersLikes);
+
+    popularityDetails.appendChild(popularityDetailsUsers);
+    popularityDetails.appendChild(popularityDetailsLikes);
+    ratingsContainer.appendChild(popularityDetails);
 
     bookDetail.appendChild(ratingsContainer);
 
