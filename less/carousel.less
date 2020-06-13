@@ -58,6 +58,17 @@
   height: 330px;
   transition: all 0.3s ease-in-out;
 
+  .toggle {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    display: none;
+
+    @media only screen and (max-width: 800px) {
+      display: flex;
+    }
+  }
+
   .overlay {
     position: absolute;
     top: 0;
@@ -76,9 +87,12 @@
       #000000 100%
     );
 
+    @media only screen and (max-width: 800px) {
+      display: none;
+    }
+
     .book-detail {
       color: white;
-      //   font-size: 20px;
       width: 100%;
       position: absolute;
       top: 50%;
@@ -88,8 +102,18 @@
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      //   text-align: center;
       margin-left: 1rem;
+
+      .close {
+        display: none;
+        flex-wrap: wrap;
+        width: 85%;
+        justify-content: flex-end;
+
+        @media only screen and (max-width: 800px) {
+          display: flex;
+        }
+      }
 
       .book_status {
         color: green;
@@ -136,7 +160,6 @@
         flex-wrap: wrap;
         // justify-content: space-between;
         align-items: center;
-        // width: 100%;
 
         .ratings {
           display: flex;
@@ -152,7 +175,6 @@
         hr {
           margin: 1rem;
           height: 25px;
-          //   background-color: #333333;
         }
         .popularity_details {
           display: flex;
@@ -173,36 +195,33 @@
     }
   }
 
-  &:hover {
-    .carousel-cell-image {
+  @media only screen and (min-width: 800px) {
+    &:hover {
+      .carousel-cell-image {
+        filter: blur(1.5px);
+        -webkit-filter: blur(1.5px);
+      }
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .showBookDetail {
+    opacity: 1;
+    display: flex;
+
+    .carousel-cell.carousel-cell-image {
       filter: blur(1.5px);
       -webkit-filter: blur(1.5px);
-    }
-    .overlay {
-      opacity: 1;
     }
   }
 }
 
 .carousel-cell-image {
-  //   display: block;
-  //   max-height: 100%;
-  //   margin: 0 auto;
-  //   max-width: 100%;
-  //   opacity: 0;
-
-  //   background: linear-gradient(
-  //     180deg,
-  //     rgba(0, 0, 0, 0.607988) 0%,
-  //     #000000 79.7%
-  //   );
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
   width: 100%;
   height: 100%;
-
-  //   object-fit: cover;
-  //   -webkit-transition: opacity 0.4s;
-  //   transition: opacity 0.4s;
 }
 
 /* fade in lazy loaded image */

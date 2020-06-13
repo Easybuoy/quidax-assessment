@@ -73,20 +73,3 @@ const toggleBackButton = () => {
 };
 
 setActive();
-
-var elem = document.querySelector(".carousel");
-
-var flkty = new Flickity(elem, {
-  // options
-  cellAlign: "left",
-  wrapAround: true,
-  contain: true,
-  arrowShape: {
-    x0: 10,
-    x1: 60,
-    y1: 50,
-    x2: 60,
-    y2: 40,
-    x3: 60,
-  },
-});

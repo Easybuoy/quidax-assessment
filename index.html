@@ -191,8 +191,19 @@
               src="./assets/books/big-magic.png"
               alt="big magic"
             />
+
+            <div class="toggle" onclick="toggleCancel()">
+              <img
+                src="./assets/details-toggle.svg"
+                class="open"
+                alt="toggle"
+              />
+            </div>
             <div class="overlay">
-              <div class="book-detail">
+              <div class="book-detail" onclick="toggleOpen()">
+                <div class="close">
+                  <img src="./assets/close-details.svg" alt="toggle" />
+                </div>
                 <p class="book_status">Available</p>
 
                 <div class="book_header">
@@ -376,6 +387,7 @@
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
     <script src="./js/data.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/carousel.js"></script>
     <script src="./js/books.js"></script>
     <script src="./js/index.js"></script>
   </body>
