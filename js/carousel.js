@@ -114,7 +114,46 @@ const loadCarousel = (carouselData) => {
     bookGenreSection.appendChild(bookLabel);
     bookDetail.appendChild(bookGenreSection);
 
+    const ratingsContainer = document.createElement("div");
+    ratingsContainer.className = "ratings_container";
+
+    const ratings = document.createElement("div");
+    ratings.className = "ratings";
+
+    const rating = document.createElement("p");
+    rating.textContent = `Ratings: ${carouselItem.rating.toFixed(1)}`;
+
+    ratings.appendChild(rating);
+
+    const ratingsImageDiv = document.createElement("div");
+    ratingsImageDiv.className = "ratings_img";
+    const ratingsImageFilled = document.createElement("img");
+    ratingsImageFilled.src = "./assets/rating-filled.svg";
+    ratingsImageFilled.alt = carouselItem.title;
+
+    ratingsImageDiv.appendChild(ratingsImageFilled);
+    const secondRatingsImage = ratingsImageFilled.cloneNode(true);
+    ratingsImageDiv.appendChild(secondRatingsImage);
+    const thirdRatingsImage = ratingsImageFilled.cloneNode(true);
+    ratingsImageDiv.appendChild(thirdRatingsImage);
+    const fourthRatingsImage = ratingsImageFilled.cloneNode(true);
+    ratingsImageDiv.appendChild(fourthRatingsImage);
+    const fifthRatingsImage = document.createElement("img");
+    fifthRatingsImage.src = "./assets/rating.svg";
+    fifthRatingsImage.alt = carouselItem.title;
+    ratingsImageDiv.appendChild(fifthRatingsImage);
+
+    ratings.appendChild(ratingsImageDiv);
+
+    ratingsContainer.appendChild(ratings);
+
+    const rule = document.createElement("hr");
+
+    ratingsContainer.appendChild(rule);
+
     
+
+    bookDetail.appendChild(ratingsContainer);
 
     overlay.appendChild(bookDetail);
     carousel.appendChild(carouselCell);
