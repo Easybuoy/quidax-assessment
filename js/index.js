@@ -28,7 +28,6 @@ window.addEventListener("click", (e) => {
 window.addEventListener("resize", () => {
   setActive();
   setSearchPlaceholder();
-  //   toggleSearch(window.screen.width);
 
   if (window.screen.width > 660) {
     const navLeft = document.querySelector(".nav__left");
@@ -75,12 +74,14 @@ const toggleBackButton = () => {
 
 setActive();
 
-// var elem = document.querySelector(".carousel");
-// var flkty = new Flickity(elem, {
-//   // options
-//   cellAlign: "left",
-//   contain: true,
-// });
+var elem = document.querySelector(".carousel");
+
+var flkty = new Flickity(elem, {
+  // options
+  cellAlign: "left",
+  wrapAround: true,
+  contain: true,
+});
 
 // // element argument can be a selector string
 // //   for an individual element
