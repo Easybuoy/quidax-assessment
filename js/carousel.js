@@ -7,6 +7,7 @@ const toggleCancel = () => {
 };
 
 const toggleOpen = () => {
+  console.log("aa");
   const openToggle = document.querySelector(".open");
   openToggle.style.display = "flex";
 
@@ -28,9 +29,97 @@ const loadCarousel = (carouselData) => {
     carouselCellImage.className = "carousel-cell-image";
     carouselCellImage.alt = carouselItem.title;
     carouselCellImage.src = carouselItem.image;
-
     carouselCell.appendChild(carouselCellImage);
+
+    const toggle = document.createElement("div");
+    toggle.className = "toggle";
+    toggle.setAttribute("onclick", "toggleCancel()");
+
+    const toggleImage = document.createElement("img");
+    toggleImage.src = "../assets/details-toggle.svg";
+    toggleImage.alt = "toggle";
+    toggleImage.className = "open";
+
+    toggle.appendChild(toggleImage);
+
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+
+    const bookDetail = document.createElement("div");
+    bookDetail.className = "book-detail";
+    bookDetail.setAttribute("onclick", "toggleOpen()");
+
+    const toggleClose = document.createElement("div");
+    toggleClose.className = "close";
+
+    const toggleCloseImage = document.createElement("img");
+    toggleCloseImage.src = "../assets/close-details.svg";
+    toggleCloseImage.alt = "toggle";
+
+    toggleClose.appendChild(toggleCloseImage);
+
+    bookDetail.appendChild(toggleClose);
+
+    const bookStatus = document.createElement("p");
+    bookStatus.className = "book_status";
+    bookStatus.textContent = carouselItem.status;
+    carouselItem.status === "Borrowed Out" &&
+      bookStatus.classList.add("unavailable");
+
+    bookDetail.appendChild(bookStatus);
+
+    const bookHeader = document.createElement("div");
+    bookHeader.className = "book_header";
+
+    const bookHeaderTitle = document.createElement("h5");
+    bookHeaderTitle.className = "book_title";
+    bookHeaderTitle.textContent = carouselItem.title;
+
+    const bookHeaderCreators = document.createElement("span");
+    bookHeaderCreators.textContent = carouselItem.author.join(", ");
+
+    bookHeader.appendChild(bookHeaderTitle);
+    bookHeader.appendChild(bookHeaderCreators);
+
+    bookDetail.appendChild(bookHeader);
+
+    const bookGenreSection = document.createElement("div");
+    bookGenreSection.className = "book_genre";
+
+    const bookGenre = document.createElement("p");
+
+    const bookGenrePlaceholder = document.createElement("span");
+    bookGenrePlaceholder.textContent = "Genre: ";
+
+    const bookGenreSpan = document.createElement("span");
+    bookGenreSpan.textContent = carouselItem.genre.join(", ");
+    bookGenreSpan.className = "content";
+
+    bookGenre.appendChild(bookGenrePlaceholder);
+    bookGenre.appendChild(bookGenreSpan);
+    bookGenreSection.appendChild(bookGenre);
+
+    const bookLabel = document.createElement("p");
+
+    const bookLabelPlaceholder = document.createElement("span");
+    bookLabelPlaceholder.textContent = "Label: ";
+
+    const bookLabelSpan = document.createElement("span");
+    bookLabelSpan.textContent = carouselItem.labels.join(", ");
+    bookLabelSpan.className = "content";
+
+    bookLabel.appendChild(bookLabelPlaceholder);
+    bookLabel.appendChild(bookLabelSpan);
+
+    bookGenreSection.appendChild(bookLabel);
+    bookDetail.appendChild(bookGenreSection);
+
+    
+
+    overlay.appendChild(bookDetail);
     carousel.appendChild(carouselCell);
+    carouselCell.appendChild(toggle);
+    carouselCell.appendChild(overlay);
   });
 };
 
