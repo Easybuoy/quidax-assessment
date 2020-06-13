@@ -81,10 +81,12 @@ var flkty = new Flickity(elem, {
   cellAlign: "left",
   wrapAround: true,
   contain: true,
+  arrowShape: {
+    x0: 10,
+    x1: 60,
+    y1: 50,
+    x2: 60,
+    y2: 40,
+    x3: 60,
+  },
 });
-
-// // element argument can be a selector string
-// //   for an individual element
-// var flkty = new Flickity(".carousel", {
-//   // options
-// });
