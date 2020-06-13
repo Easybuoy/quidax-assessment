@@ -3,7 +3,10 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  //   margin-top: 10rem;
+
+  @media only screen and (max-width: 1200px) {
+    margin: 7rem 2rem 0 2rem;
+  }
 
   h4 {
     text-transform: uppercase;
@@ -36,6 +39,9 @@
     left: 0;
     width: 35px;
     height: 450px;
+    @media only screen and (max-width: 1200px) {
+      height: 100%;
+    }
 
     svg {
       width: 15px;
@@ -45,6 +51,10 @@
     right: 0;
     width: 35px;
     height: 450px;
+
+    @media only screen and (max-width: 1200px) {
+      height: 100%;
+    }
     svg {
       width: 15px;
     }
