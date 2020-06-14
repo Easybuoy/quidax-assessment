@@ -1,15 +1,16 @@
-const toggleCancel = () => {
-  const toggle = document.querySelector(".open");
-  const bookOverlay = document.querySelector(".overlay");
+const toggleCancel = (id) => {
+  const toggle = document.querySelector(`#open-${id}`);
+  const bookOverlay = document.querySelector(`#overlay-${id}`);
+
   bookOverlay.classList.add("showBookDetail");
   toggle.style.display = "none";
 };
 
-const toggleOpen = () => {
-  const openToggle = document.querySelector(".open");
+const toggleOpen = (id) => {
+  const openToggle = document.querySelector(`#open-${id}`);
   openToggle.style.display = "flex";
 
-  const bookOverlay = document.querySelector(".overlay");
+  const bookOverlay = document.querySelector(`#overlay-${id}`);
   bookOverlay.classList.remove("showBookDetail");
 };
 
@@ -28,21 +29,23 @@ const loadCarousel = (carouselData) => {
 
     const toggle = document.createElement("div");
     toggle.className = "toggle";
-    toggle.setAttribute("onclick", "toggleCancel()");
+    toggle.setAttribute("onclick", `toggleCancel(${carouselItem.id})`);
 
     const toggleImage = document.createElement("img");
     toggleImage.src = "../assets/details-toggle.svg";
     toggleImage.alt = "toggle";
     toggleImage.className = "open";
+    toggleImage.id = `open-${carouselItem.id}`;
 
     toggle.appendChild(toggleImage);
 
     const overlay = document.createElement("div");
     overlay.className = "overlay";
+    overlay.id = `overlay-${carouselItem.id}`;
 
     const bookDetail = document.createElement("div");
     bookDetail.className = "book-detail";
-    bookDetail.setAttribute("onclick", "toggleOpen()");
+    bookDetail.setAttribute("onclick", `toggleOpen(${carouselItem.id})`);
 
     const toggleClose = document.createElement("div");
     toggleClose.className = "close";
@@ -186,7 +189,14 @@ const loadCarousel = (carouselData) => {
   });
 };
 
-loadCarousel([...data, ...data]);
+const carouselData = data;
+
+data.forEach((carousel) => {
+  const newCarousel = { ...carousel, id: 5 + carousel.id };
+  carouselData.push(newCarousel);
+});
+
+loadCarousel(carouselData);
 
 const carouselElement = document.querySelector(".carousel");
 
@@ -194,7 +204,7 @@ const flkty = new Flickity(carouselElement, {
   cellAlign: "left",
   wrapAround: true,
   contain: true,
-  dragable: true,
+  // dragable: true,
   arrowShape: {
     x0: 10,
     x1: 60,
