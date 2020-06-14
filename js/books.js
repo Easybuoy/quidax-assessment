@@ -161,34 +161,18 @@ const loadFeaturedBooks = (books, section, className) => {
 //   }
 // });
 
-console.log(data);
 const mediaQuery = (x) => {
   if (x.matches) {
-    console.log("small");
     const trimmedData = data.slice(0, 3);
     const allBooksTrimmedData = allBooks.slice(0, 5);
     loadFeaturedBooks(trimmedData, "Recently Added", "recently-added");
     loadFeaturedBooks(allBooksTrimmedData, "All Books", "all-books");
-    // If media query matches
   } else {
-    console.log("big");
     loadFeaturedBooks(data, "Recently Added", "recently-added");
     loadFeaturedBooks(allBooks, "All Books", "all-books");
   }
 };
 
 const query = window.matchMedia("(max-width: 800px)");
-mediaQuery(query); // Call listener function at run time
+mediaQuery(query);
 query.addListener(mediaQuery);
-
-// if (window.screen.width <= 770) {
-//   const trimmedData = data.slice(0, 3);
-//   const allBooksTrimmedData = allBooks.slice(0, 5);
-
-//   loadFeaturedBooks(trimmedData, "Recently Added");
-//   loadFeaturedBooks(allBooksTrimmedData, "All Books");
-// } else {
-//   isLargeScreen = true;
-//   loadFeaturedBooks(data, "Recently Added");
-//   loadFeaturedBooks(allBooks, "All Books");
-// }
