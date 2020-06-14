@@ -189,7 +189,7 @@ const loadCarousel = (carouselData) => {
   });
 };
 
-const carouselData = data;
+const carouselData = [...data];
 
 data.forEach((carousel) => {
   const newCarousel = { ...carousel, id: 5 + carousel.id };
