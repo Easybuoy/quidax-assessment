@@ -9,7 +9,6 @@ const loadFeaturedBooks = (books, section, className) => {
   const booksContainer = document.createElement("div");
   booksContainer.className = "main-content__books_container";
   booksContainer.classList.add(className);
-  // booksContainer.id = "featured";
 
   const booksHeader = document.createElement("h4");
   booksHeader.className = "main-content__h4";
@@ -148,21 +147,8 @@ const loadFeaturedBooks = (books, section, className) => {
   return booksContainer;
 };
 
-// window.addEventListener("resize", () => {
-//   if (window.screen.width <= 770) {
-//     const trimmedData = data.slice(0, 3);
-//     const allBooksTrimmedData = allBooks.slice(0, 5);
-
-//     loadFeaturedBooks(trimmedData, "Recently Added");
-//     loadFeaturedBooks(allBooksTrimmedData, "All Books");
-//   } else {
-//     loadFeaturedBooks(data, "Recently Added");
-//     loadFeaturedBooks(allBooks, "All Books");
-//   }
-// });
-
-const mediaQuery = (x) => {
-  if (x.matches) {
+const mediaQuery = (query) => {
+  if (query.matches) {
     const trimmedData = data.slice(0, 3);
     const allBooksTrimmedData = allBooks.slice(0, 5);
     loadFeaturedBooks(trimmedData, "Recently Added", "recently-added");

@@ -74,20 +74,6 @@ const toggleSearch = (width = 660) => {
     const navButton = document.querySelector(".nav__button");
     navButton.style.display = "flex";
   }
-  //   else {
-  //     const navLeft = document.querySelector(".nav__left");
-  //     navLeft.style.display = "flex";
-
-  //     const navSearch = document.querySelector(".nav__search");
-  //     navSearch.style.display = "none";
-  //     // navSearch.className = "nav__search nav__search__mobile";
-
-  //     const navLinks = document.querySelector(".nav__links");
-  //     navLinks.style.display = "flex";
-
-  //     const navButton = document.querySelector(".nav__button");
-  //     navButton.style.display = "none";
-  //   }
 };
 
 const toggleSearchResults = () => {
