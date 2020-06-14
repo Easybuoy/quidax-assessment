@@ -194,6 +194,7 @@ const flkty = new Flickity(carouselElement, {
   cellAlign: "left",
   wrapAround: true,
   contain: true,
+  dragable: true,
   arrowShape: {
     x0: 10,
     x1: 60,
